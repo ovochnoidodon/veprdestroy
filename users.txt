@@ -1,0 +1,1 @@
+[{"username":"spetr5995@gmail.com","email":"spetr5995@gmail.ru","password":"$2y$10$V2jBR4VNoKmynATyjSM1BO5K7kfR8KJ4\/LTaBWHLHxNq2KQ3AKiUm"}]

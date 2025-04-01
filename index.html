@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нейросеть Чат</title>
+    <link rel="stylesheet" href="styles1.css">
+    <!-- Подключение библиотеки marked -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="main-content">
+        <div class="chat-container">
+            <h1>Benpb</h1>
+            <div id="messages" class="messages"></div>
+            <form id="message-form">
+                <input type="text" id="message-input" placeholder="Введите ваше сообщение..." required autofocus>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+        <button id="register-btn" class="register-btn">Зарегистрироваться</button>
+        <button id="login-btn" class="login-btn">Войти</button>
+    </div>
+
+    <!-- Модальное окно регистрации -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1>Регистрация</h1>
+            <form id="register-form">
+                <label for="regUsername">Имя пользователя:</label>
+                <input type="text" id="regUsername" name="username" required><br>
+                <label for="regEmail">Email:</label>
+                <input type="email" id="regEmail" name="email" required><br>
+                <label for="regPassword">Пароль:</label>
+                <input type="password" id="regPassword" name="password" required><br>
+                <button type="submit">Зарегистрироваться</button>
+                <div id="regMessage" class="message"></div>
+            </form>
+            <p>Уже есть аккаунт? <a href="#" id="switch-to-login">Войти</a></p>
+        </div>
+    </div>
+
+    <!-- Модальное окно входа -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1>Вход</h1>
+            <form id="login-form">
+                <label for="logUsername">Имя пользователя:</label>
+                <input type="text" id="logUsername" name="username" required><br>
+                <label for="logPassword">Пароль:</label>
+                <input type="password" id="logPassword" name="password" required><br>
+                <button type="submit">Войти</button>
+                <div id="logMessage" class="message"></div>
+            </form>
+            <p>Нет аккаунта? <a href="#" id="switch-to-register">Зарегистрироваться</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <button id="privacy-policy-btn">Политика конфиденциальности</button>
+    </footer>
+
+    <div id="privacy-policy-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Политика конфиденциальности</h2>
+            <div id="privacy-policy-text">
+                <p><strong>Политика конфиденциальности</strong></p>
+                <p>Мы уважаем конфиденциальность наших пользователей и стремимся защищать их персональные данные. Настоящая политика конфиденциальности описывает, каким образом мы собираем, используем и защищаем информацию, предоставленную вами при использовании нашего сервиса.</p>
+
+                <p><strong>Сбор информации</strong></p>
+                <p>Когда вы используете наш сервис, мы можем собирать следующую информацию:</p>
+                <ul>
+                    <li>Личные данные, такие как имя, адрес электронной почты и другие контактные данные, которые вы добровольно предоставляете нам.</li>
+                    <li>Данные об использовании нашего сервиса, включая IP-адрес, тип браузера, операционную систему и дату и время посещения.</li>
+                    <li>Информация, получаемая автоматически при взаимодействии с нашим сайтом, такая как файлы cookie и аналогичные технологии отслеживания.</li>
+                </ul>
+
+                <p><strong>Использование информации</strong></p>
+                <p>Собранная информация используется для следующих целей:</p>
+                <ul>
+                    <li>Предоставления услуг и улучшения качества обслуживания.</li>
+                    <li>Аналитики и статистики для понимания предпочтений пользователей и оптимизации нашего сервиса.</li>
+                    <li>Связи с вами по поводу вашего использования нашего сервиса.</li>
+                    <li>Отправки уведомлений и новостей, связанных с нашими услугами.</li>
+                </ul>
+
+                <p><strong>Передача информации третьим лицам</strong></p>
+                <p>Мы не передаем ваши личные данные третьим лицам, за исключением случаев, когда это требуется по закону или для обеспечения безопасности нашего сервиса.</p>
+
+                <p><strong>Безопасность данных</strong></p>
+                <p>Мы принимаем меры для защиты ваших персональных данных от несанкционированного доступа, изменения, раскрытия или уничтожения. Однако помните, что передача данных через интернет никогда не бывает абсолютно безопасной.</p>
+
+                <p><strong>Файлы cookie</strong></p>
+                <p>Наш сайт использует файлы cookie для улучшения функциональности и удобства пользования. Вы можете отключить cookies в настройках своего браузера, однако это может повлиять на работоспособность некоторых функций нашего сервиса.</p>
+
+                <p><strong>Права пользователей</strong></p>
+                <p>Вы имеете право на доступ, изменение и удаление своих личных данных. Для осуществления этих прав свяжитесь с нами по указанному ниже контакту.</p>
+
+                <p><strong>Изменения в политике конфиденциальности</strong></p>
+                <p>Мы оставляем за собой право изменять данную политику конфиденциальности. Все изменения будут опубликованы на этой странице.</p>
+                <p><em>Последнее обновление: 16.12.24</em></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
