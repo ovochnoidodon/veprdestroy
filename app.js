@@ -105,23 +105,21 @@ messageForm.addEventListener('submit', async event => {
 	messageInput.value = ''
 
 	try {
-		const response = await fetch(
-			'https://openrouter.ai/api/v1',
-			{
-				method: "POST",
-				headers: {
-					Authorization:
-					'Bearer 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',
-					'HTTP-Referer': 'https://sigmaboy.ru/',
-					'X-Title': 'popkinsyn',
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify({
-					model: 'deepseek/deepseek-v3-base:free',
-					messages: [{ role: 'user', content: userMessage }],
-				}),
-			}
-		)
+		const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+			method: "POST",
+			headers: {
+				Authorization:
+				'Bearer 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',
+				'HTTP-Referer': 'https://sigmaboy.ru/',
+				'X-Title': 'popkinsyn',
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				model: 'google/gemini-2.5-pro-exp-03-25:free',
+				messages: [{ role: 'user', content: userMessage }],
+			}),
+		}
+	)
 
 		if (!response.ok) {
 			throw new Error(`Ошибка HTTP: ${response.status}`)
