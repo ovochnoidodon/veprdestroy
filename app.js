@@ -111,7 +111,7 @@ messageForm.addEventListener('submit', async event => {
 				method: 'POST',
 				headers: {
 					Authorization:
-						'Bearer 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',
+						'Bearer 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',
 					'HTTP-Referer': 'https://sigmaboy.ru/',
 					'X-Title': 'popkinsyn',
 					'Content-Type': 'application/json',
