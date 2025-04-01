@@ -106,18 +106,18 @@ messageForm.addEventListener('submit', async event => {
 
 	try {
 		const response = await fetch(
-			'https://openrouter.ai/api/v1/chat/completions',
+			'https://openrouter.ai/api/v1',
 			{
 				method: 'POST',
 				headers: {
 					Authorization:
-						'Bearer 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',
-					'HTTP-Referer': 'https://neurotoday.ru/',
-					'X-Title': 'NeuroToday',
+						'Bearer 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',
+					'HTTP-Referer': 'https://sigmaboy.ru/',
+					'X-Title': 'popkinsyn',
 					'Content-Type': 'application/json',
 				},
 				body: JSON.stringify({
-					model: 'deepseek/deepseek-chat-v3-0324:free',
+					model: 'deepseek/deepseek-v3-base:free',
 					messages: [{ role: 'user', content: userMessage }],
 				}),
 			}
