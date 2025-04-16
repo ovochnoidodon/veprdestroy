@@ -101,16 +101,16 @@ messageForm.addEventListener('submit', async event => {
   messageInput.value = ''
 
   try {
-    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+    const response = await fetch('https://openrouter.ai/api/v1', {
       method: "POST",
       headers: {
-        Authorization: 'Bearer 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',
-        'HTTP-Referer': 'https://sigmaboy.ru/',
-        'X-Title': 'popkinsyn',
+        Authorization: 'Bearer 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',
+        'HTTP-Referer': 'https://sigaboy.ru/',
+        'X-Title': 'popkinsn',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'google/gemini-2.5-pro-exp-03-25:free',
+        model: 'meta-llama/llama-4-maverick:free',
         messages: [{ role: 'user', content: userMessage }],
       }),
     })
