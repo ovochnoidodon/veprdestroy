@@ -105,12 +105,12 @@ messageForm.addEventListener('submit', async event => {
       method: "POST",
       headers: {
         Authorization: 'Bearer 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',
-        'HTTP-Referer': 'https://sigaboy.ru/',
+        'HTTP-Referer': 'https://destroyervepr.vercel.app/',
         'X-Title': 'popkinsn',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'meta-llama/llama-4-maverick:free',
+        model: 'deepseek/deepseek-v3-base:free',
         messages: [{ role: 'user', content: userMessage }],
       }),
     })
