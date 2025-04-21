@@ -101,7 +101,7 @@ messageForm.addEventListener('submit', async event => {
   messageInput.value = ''
 
   try {
-    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+    const response = await fetch('https://openrouter.ai/api/v1/chat/completion', {
       method: "POST",
       headers: {
         Authorization: 'Bearer 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',
