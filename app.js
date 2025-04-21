@@ -104,9 +104,9 @@ messageForm.addEventListener('submit', async event => {
     const response = await fetch('https://openrouter.ai/api/v1/chat/completion', {
       method: "POST",
       headers: {
-        Authorization: 'Bearer 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',
-        'HTTP-Referer': 'https://destroyervepr.vercel.app/',
-        'X-Title': 'popkinsn',
+        Authorization: 'Bearer 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',
+        'HTTP-Referer': 'https://destroyerver.vercel.app/',
+        'X-Title': 'popknsn',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
