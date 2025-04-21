@@ -101,7 +101,7 @@ messageForm.addEventListener('submit', async event => {
   messageInput.value = ''
 
   try {
-    const response = await fetch('https://openrouter.ai/api/v1/chat/completion', {
+    const response = await fetch('https://openrouter.ai/api/v1', {
       method: "POST",
       headers: {
         Authorization: 'Bearer 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',
@@ -110,7 +110,7 @@ messageForm.addEventListener('submit', async event => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'deepseek/deepseek-v3-base:free',
+        model: 'qwen/qwen2.5-vl-3b-instruct:free',
         messages: [{ role: 'user', content: userMessage }],
       }),
     })
